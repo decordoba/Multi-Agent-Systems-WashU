@@ -1,6 +1,6 @@
 #!/usr/bin/env
 
-from basic import *
+from basic import *  # Find basic.py in https://github.com/decordoba/basic-python
 import math
 import subprocess
 

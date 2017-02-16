@@ -1,19 +1,7 @@
-/* ASSIGN, Assignment Problem */
-
-/* Written in GNU MathProg by Andrew Makhorin <mao@gnu.org> */
-
-/* The assignment problem is one of the fundamental combinatorial
-   optimization problems.
-
-   In its most general form, the problem is as follows:
-
-   There are a number of agents and a number of tasks. Any agent can be
-   assigned to perform any task, incurring some cost that may vary
-   depending on the agent-task assignment. It is required to perform all
-   tasks by assigning exactly one agent to each task in such a way that
-   the total cost of the assignment is minimized.
-
-   (From Wikipedia, the free encyclopedia.) */
+/*
+From m agents and n objects, it assigns an object to each agent maximizing
+the value that each agent gets from being assigned such object.
+*/
 
 param m, integer, > 0;
 /* number of agents */
@@ -31,7 +19,7 @@ param c{i in I, j in J}, >= 0;
 /* value of allocating object j to agent i */
 
 var x{i in I, j in J}, >= 0;
-/* x[i,j] = 1 means task j is assigned to agent i
+/* x[i,j] = 1 means object j is assigned to agent i
    note that variables x[i,j] are binary, however, there is no need to
    declare them so due to the totally unimodular constraint matrix */
 
@@ -58,9 +46,7 @@ printf "\n";
 data;
 */
 
-/* These data correspond to an example from [Christofides]. */
-
-/* Optimal solution is 76 */
+/* We can see some examples of the data that we can use below */
 
 /*
 param m := 3;
@@ -89,14 +75,14 @@ param c : 1  2  3  4  5  6  7  8  9 10 :=
       10 70 21  2 89 30 91 66 74 79 92 ;
 */
 /*param c : 1  2  3  4  5  6  7  8 :=
-      1  13 21 20 12  8 26 22 11
-      2  12 36 25 41 40 11  4  8
-      3  35 32 13 36 26 21 13 37
-      4  34 54  7  8 12 22 11 40
-      5  21  6 45 18 24 34 12 48
-      6  42 19 39 15 14 16 28 46
-      7  16 34 38  3 34 40 22 24
-      8  26 20  5 17 45 31 37 43 ;
+        1  13 21 20 12  8 26 22 11
+        2  12 36 25 41 40 11  4  8
+        3  35 32 13 36 26 21 13 37
+        4  34 54  7  8 12 22 11 40
+        5  21  6 45 18 24 34 12 48
+        6  42 19 39 15 14 16 28 46
+        7  16 34 38  3 34 40 22 24
+        8  26 20  5 17 45 31 37 43 ;
 */
 
 end;
