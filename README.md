@@ -1,4 +1,4 @@
-# Introduction to Artificial Intelligence
+# Multi-Agent Systems
 **Taken on: Washington University in Saint Louis, Spring 2017**
 
 **Instructor: Sanmay Das**
